@@ -1,0 +1,17 @@
+.result-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.object{
+    text-align: center;
+    width: 400px;
+    border-radius: 10px;
+    border: 1px black solid;
+    background-color: rgb(255, 192, 74);
+    height: 150px;
+    padding: 20px; 
+    margin: 5px;
+    box-sizing: border-box;
+} 
