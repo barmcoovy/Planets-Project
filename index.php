@@ -7,9 +7,10 @@
         echo "</div></a>";
         echo "<br>";
         echo "<div class='index-buttons'>";
-        echo "<button id='create'><a id='object' href='create.php'>DODAJ OBIEKT</a></button>"; // Poprawiony link do dodaj_obiekt.php
+        echo "<button id='create'><a id='object' href='create.php'>DODAJ OBIEKT</a></button>";
         echo "<form action='scripts/logout.php'>"; 
         echo "<br>";
         echo"<input type='submit' id='logout' value='WYLOGUJ'/></div></div>";
         echo "</div>";                           
-    }  ?>
+    }  
+?>

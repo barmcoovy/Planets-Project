@@ -36,7 +36,7 @@
             <br>
             <br>    
             <label for="distance">Odległość [AU]:</label>
-            <input type="number" name="distance" required value="0" min="0">
+            <input type="number" name="distance" value="0" min="0" required>
             <div class="buttons">
             <input type="submit" value="DODAJ">
             <input type="reset" value="WYCZYŚĆ" >
