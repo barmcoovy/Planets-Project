@@ -3,7 +3,6 @@ session_start();
 include('db.php');
 $login = $_POST['login'];
 $password = $_POST['password'];
-$id;
 $checkLogin = "SELECT * FROM uzytkownicy WHERE login = '$login'";
 $resultLogin = mysqli_query($db,$checkLogin);
 
