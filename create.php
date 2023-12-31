@@ -18,7 +18,7 @@
 </head>
 <body>
     <div id="form">
-        <form action="scripts/create_script.php" method="POST"> 
+        <form action="scripts/create_script.php" method="POST" enctype="multipart/form-data"> 
             <label for="login">Nazwa:</label>
             <input type="text" name="name" required>
             <label for="password">Typ:</label>
@@ -37,6 +37,8 @@
             <br>    
             <label for="distance">Odległość [AU]:</label>
             <input type="number" name="distance" value="0" min="0" required>
+            <label for="image">Dodaj zdjęcie:</label>
+            <input type="file" name="image">
             <div class="buttons">
             <input type="submit" value="DODAJ">
             <input type="reset" value="WYCZYŚĆ" >
