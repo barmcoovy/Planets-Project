@@ -39,3 +39,33 @@ a{
     text-decoration: none;
     color: black;
 }
+#nickname{
+    height: 50px;
+    width: 150px;
+    text-align: center;
+    padding-top: 7px;
+    padding-bottom: 5px;
+    border: 1px solid black;
+    margin-right: 5px ;
+}
+.button-index{
+    display: block;
+    margin-bottom: 15px;
+    text-align: center;
+    height: 50px;
+    width: 200px;
+    font-size: 18px;
+    margin-top: 15px;
+}
+#object{
+    margin-top: 5px;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+#log-out{
+    margin-top: 5px;
+}
+.link-nickname{
+    height: 100%;
+}

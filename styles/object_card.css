@@ -1,0 +1,21 @@
+.object-card{
+    text-align: center;
+    width: 450px;
+    border: 1px black solid;
+    background-color: rgb(255, 192, 74);
+    height: 400px;
+    padding: 20px; 
+    margin: 10px;
+    box-shadow: 1px 1px 10px 1px black;
+}
+.img-objects{
+    margin-top: -15px;
+    height: 140px;
+    width: 200px;
+}
+.distance{
+    text-decoration: underline;
+}
+.object-card h1{
+    margin-bottom: 45px;
+}

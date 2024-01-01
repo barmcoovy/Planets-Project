@@ -25,7 +25,7 @@
             FROM obiekty 
             INNER JOIN uzytkownicy 
             ON obiekty.uzytkownik_id = uzytkownicy.id 
-            WHERE uzytkownicy.id = '$id'";
+            WHERE uzytkownicy.id = $id";
         $result = mysqli_query($db, $sql);
     
         while($row = mysqli_fetch_assoc($result)) {

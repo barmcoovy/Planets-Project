@@ -1,6 +1,7 @@
 <?php
-    include('components/header.php');
     session_start();
+    include('components/header.php');
+    
 
     if (isset($_SESSION['login']) and isset($_SESSION['id'])) {
     }
@@ -38,12 +39,22 @@
             <label for="distance">Odległość [AU]:</label>
             <input type="number" name="distance" value="0" min="0" required>
             <label for="image">Dodaj zdjęcie:</label>
-            <input type="file" name="image">
+            <input type="file" name="image" accept=".png, .jpg">
             <div class="buttons">
             <input type="submit" value="DODAJ">
             <input type="reset" value="WYCZYŚĆ" >
             </div>
         </form>
+        <?php
+        if (isset($_GET['err'])){
+            if(($_GET['err'])==1){
+                echo "Nieprawidłowe rozszerzenie obrazu!";
+                echo"<br>";
+                echo "Proszę wybrać grafikę z rozszerzeniem png lub jpg.";
+            }
+        }
+    ?>
     </div>
+   
 </body>
 </html>

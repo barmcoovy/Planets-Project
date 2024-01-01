@@ -1,22 +1,35 @@
-<?php
-
-function object_card($obiekt) {
-    $body = "<div class='object-card'>
-                <p>Twórca: {$obiekt['Login']}</p>
-                <p>ID: {$obiekt['ID_Obiektu']}</p>
-                <p>Nazwa: {$obiekt['Nazwa']}</p>
-                <p>Typ: {$obiekt['Typ']}</p>
-                <p>Data: {$obiekt['Data']}</p>
-                <p>Odległość: {$obiekt['Odległość']} AU</p>";
-
-    if($obiekt['Obraz'] == NULL) {
-        $body .= "<img src='static/objects/brak.png' alt='Brak obrazu'/>";
-    } else {
-        $body .= "<img src='static/objects/{$obiekt['Obraz']}' height='50px' width='50px' alt='Obraz'/>";
+    <?php
+    function object_card($obiekt) {
+        if($obiekt['Obraz']==null) {
+            $body = "<div class='object-card'>
+                        <div class='object-header'>
+                            <p>{$obiekt['Login']}</p><br>
+                            <p>{$obiekt['ID_Obiektu']}</p>
+                        </div>
+                        <h1>{$obiekt['Nazwa']}</h1>
+                        <img src='static/objects/brak.png'/>
+                        <p>{$obiekt['Typ']}</p>
+                        
+                        <p class='distance'>{$obiekt['Odległość']} AU</p>
+                        
+                        <hr><p>{$obiekt['Data']}</p>";
+                        echo "</div>";
+        } else {
+            $body = "<div class='object-card'>
+                        <div class='object-header'>
+                            <p>{$obiekt['Login']}</p><br>
+                            <p>{$obiekt['ID_Obiektu']}</p>
+                        </div>
+                        <h1>{$obiekt['Nazwa']}</h1>
+                        <img class='img-objects' src='static/objects/{$obiekt['Obraz']}'/>
+                        <p>{$obiekt['Typ']}</p>
+                        
+                        <p class='distance'>{$obiekt['Odległość']} AU</p>
+                        
+                        <hr><p>{$obiekt['Data']}</p>";   
+                       echo "</div>";
+        }
+        
+        return $body;
     }
-
-    $body .= "</div>";
-    return $body;
-}
-
-?>
+    ?>
