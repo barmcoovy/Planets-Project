@@ -29,7 +29,7 @@
                         <hr><p>{$obiekt['Data']}</p>";   
                        echo "</div>";
         }
-        
         return $body;
+        
     }
     ?>

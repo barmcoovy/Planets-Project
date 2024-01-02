@@ -21,7 +21,7 @@
             <div class="settings"><a href="settings.php" class="link">USTAWIENIA</a></div>
         </div>
         <div class="right">
-            <div class="objects-header"><h1>OBIEKTY:</h1></div>
+            <div class="objects-header"><h1>TWOJE OBIEKTY:</h1></div>
             <div class="objects">
                 <?php
                     foreach($obiekty as $obiekt){

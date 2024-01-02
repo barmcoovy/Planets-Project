@@ -3,43 +3,27 @@
   include('scripts/db.php');
   include('components/header.php');
   include('components/object_card.php');
-
-
-$results = get_profile_objects($db, $_SESSION['id']);
-
-
-foreach ($results as $obiekt) {
-
-    echo object_card($obiekt);
-
-}
-  
-  // echo "<h1>Wszystkie obiekty<h1><div class='result-container'>";
-
-  // while ($row = mysqli_fetch_assoc($result)) {
-  //     echo "<div class='object'>
-  //             <div class='object-header'>
-  //             <p>{$row['login']}</p><br>
-  //             <p>{$row['id']}</p>
-  //           </div>
-  //             <hr>
-  //             <h1 class='title'>{$row['nazwa']}</h1>
-  //             <div class='object-content'>";
-  //             if($row['obraz']==NULL){
-  //               echo "<img src='static/objects/brak.png' height='150px' width='auto'/>";
-  //             }
-  //             else{
-  //               echo "<img class='got-img'src='static/objects/$row[obraz]' height='150px' width='150px'/>";
-  //             }
-  //            echo "<strong>Typ:</strong> {$row['typ']}
-  //             <strong>Odległość:</strong> {$row['odleglosc']} AU
-  //             <p>{$row['data_stworzenia']}</p>";
-             
-  //            echo "</div>
-  //           </div>";
-  // }
-
-  // echo "</div>";
-
-  mysqli_close($db);
 ?>
+  <h1 class='title'>WSZYSTKIE OBIEKTY</h1>
+  <div class='result-container'>
+<?php
+$objects = array();
+        $sql = "
+        SELECT uzytkownicy.login AS Login,obiekty.id AS ID_Obiektu,obiekty.uzytkownik_id AS ID_Użytkownika,obiekty.nazwa AS Nazwa,
+        obiekty.typ AS Typ,obiekty.odleglosc AS Odległość,obiekty.data_stworzenia AS Data,obiekty.obraz AS Obraz FROM obiekty 
+        INNER JOIN uzytkownicy ON obiekty.uzytkownik_id = uzytkownicy.id";
+        $result = mysqli_query($db, $sql);
+    
+        while($row = mysqli_fetch_assoc($result)) {
+            array_push($objects, $row);
+        }
+        echo "<div class='result-container'>";
+        foreach ($objects as $object) {
+          
+          echo object_card($object);
+          
+      }
+      echo "</div>";
+      mysqli_close($db);
+?>
+</div>
