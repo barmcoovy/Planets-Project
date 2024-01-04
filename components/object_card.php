@@ -1,7 +1,8 @@
     <?php
     function object_card($obiekt) {
         if($obiekt['Obraz']==null) {
-            $body = "<div class='object-card'>
+            $body = <<<END
+                        <div class='object-card'>
                         <div class='object-header'>
                             <p>{$obiekt['Login']}</p><br>
                             <p>{$obiekt['ID_Obiektu']}</p>
@@ -9,13 +10,13 @@
                         <h1>{$obiekt['Nazwa']}</h1>
                         <img src='static/objects/brak.png'/>
                         <p>{$obiekt['Typ']}</p>
-                        
                         <p class='distance'>{$obiekt['Odległość']} AU</p>
-                        
-                        <hr><p>{$obiekt['Data']}</p>";
-                        echo "</div>";
+                        <hr><p>{$obiekt['Data']}</p>
+                        </div>
+                        END;
         } else {
-            $body = "<div class='object-card'>
+            $body = <<<END
+                        <div class='object-card'>
                         <div class='object-header'>
                             <p>{$obiekt['Login']}</p><br>
                             <p>{$obiekt['ID_Obiektu']}</p>
@@ -23,11 +24,10 @@
                         <h1>{$obiekt['Nazwa']}</h1>
                         <img class='img-objects' src='static/objects/{$obiekt['Obraz']}'/>
                         <p>{$obiekt['Typ']}</p>
-                        
                         <p class='distance'>{$obiekt['Odległość']} AU</p>
-                        
-                        <hr><p>{$obiekt['Data']}</p>";   
-                       echo "</div>";
+                        <hr><p>{$obiekt['Data']}</p>   
+                       </div>
+                       END;
         }
         return $body;
         

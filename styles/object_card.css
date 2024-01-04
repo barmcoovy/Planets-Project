@@ -3,14 +3,30 @@
     width: 450px;
     border: 1px black solid;
     background-color: rgb(255, 192, 74);
-    height: 400px;
+    height: 450px;
     padding: 20px; 
     margin: 10px;
     box-shadow: 1px 1px 10px 1px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.object-card:hover{
+    text-align: center;
+    width: 450px;
+    border: 1px white solid;
+    background-color: rgb(255, 192, 74);
+    height: 450px;
+    padding: 20px; 
+    margin: 10px;
+    box-shadow: 1px 1px 10px 1px white;
+    
 }
 .img-objects{
     margin-top: -15px;
-    height: 140px;
+    height: 180px;
     width: 200px;
 }
 .distance{
@@ -18,4 +34,9 @@
 }
 .object-card h1{
     margin-bottom: 45px;
+}
+.object-header{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }

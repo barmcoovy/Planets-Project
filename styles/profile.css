@@ -45,7 +45,7 @@
     align-items: center;
     justify-content: center;
 }
-.obiekty{
+.objects{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
