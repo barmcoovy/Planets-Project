@@ -1,5 +1,4 @@
 <?php
-
 function profile_card($profil, $obiekty) {
     $ileObiektow = sizeof($obiekty);
     $body =  <<<END

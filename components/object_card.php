@@ -8,7 +8,7 @@
                             <p>{$obiekt['ID_Obiektu']}</p>
                         </div>
                         <h1>{$obiekt['Nazwa']}</h1>
-                        <img src='static/objects/brak.png'/>
+                        <img src='static/brak.png'/>
                         <p>{$obiekt['Typ']}</p>
                         <p class='distance'>{$obiekt['Odległość']} AU</p>
                         <hr><p>{$obiekt['Data']}</p>

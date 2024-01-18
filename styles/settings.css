@@ -1,0 +1,36 @@
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+main{
+    display: flex;
+}
+#left,#right{
+    margin-top: 10px;
+    width: 50%;
+}
+h3{
+    text-transform: uppercase;
+    text-align: center;
+}
+#user-settings-header{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+#login-change-button{
+    width: 30px;
+    height: 30px;
+}
+#change-login-div{
+    display: none;
+}
+#login-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}

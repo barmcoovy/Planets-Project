@@ -10,7 +10,7 @@ if (mysqli_num_rows($resultLogin) > 0) {
     $row = mysqli_fetch_assoc($resultLogin);
     if (sha1($password) == $row['haslo']) {
         $_SESSION['login'] = $login;
-        $_SESSION['id']  =$row['id'];
+        $_SESSION['id']  = $row['id'];
         header("Location: ../index.php");
     } else {
         header("Location: ../login.php?err=1");
