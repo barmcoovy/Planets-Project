@@ -8,3 +8,13 @@ function changeLogin() {
         changeLogin.style.display = "none";
     }
 }
+function changePassword(){
+    var changePassword = document.getElementById("change-password-div");
+    var currentPasswordStyle = window.getComputedStyle(changePassword).display;
+
+    if (currentPasswordStyle == 'none') {
+        changePassword.style.display = "flex";
+    } else {
+        changePassword.style.display = "none";
+    }
+}
