@@ -1,28 +1,36 @@
-<?php
-    session_start();
-    include('components/header.php');
-    
-    if (isset($_SESSION['login']) and isset($_SESSION['id'])) {
-    }
-    else{
-        header("Location: login.php?err=3");
-    }
-?>
+<?php   
+session_start();
+include 'components/header.php';
+include 'scripts/db.php';
 
+if (isset($_SESSION['login']) && $_SESSION['id']){
+
+}else{
+    header('Location: ./login.php?err=3');
+}
+if (isset($_GET['id'])) {
+    $id_obj = $_GET['id'];
+    $object = get_object_by_id($db, $id_obj);
+    if ($object) {
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STWÓRZ OBIEKT</title>
+    <title>EDYTUJ OBIEKT</title>
+    <link rel="stylesheet" href="styles/edit_object.css">
 </head>
 <body>
+    <div id="header-edit">
+    <a href="./settings.php"><img src="static/assets/return.png"></a><h1>EDYTUJ OBIEKT O ID: <?php echo $id_obj; ?></h1>
+    </div>
     <div id="form">
-        <form action="scripts/create_script.php" method="POST" enctype="multipart/form-data"> 
+       <?php echo "<form action='scripts/edit_object_script.php?id={$id_obj}' method='POST' enctype='multipart/form-data'>" ?>
             <label for="login">Nazwa:</label>
-            <input type="text" name="name" required>
+            <input type="text" name="edit-name" required>
             <label for="password">Typ:</label>
-            <select name="type">
+            <select name="edit-type">
                 <option value="Nie wiem">Nie wiem</option>
                 <option value="Planeta">Planeta</option>
                 <option value="Czerwony gigant">Czerwony gigant</option>
@@ -36,7 +44,7 @@
             <br>
             <br>    
             <label for="distance">Odległość [AU]:</label>
-            <input type="number" name="distance" value="0" min="0" required>
+            <input type="number" name="edit-distance" value="0" min="0" required>
             <label for="image">Dodaj zdjęcie:</label>
             <input type="file" name="image" accept=".png, .jpg">
             <div class="buttons">
@@ -53,7 +61,12 @@
             }
         }
     ?>
-    </div>
-   
+    </div> 
 </body>
-</html>
+</html> 
+<?php
+    } else {
+        
+        echo "Nie można znaleźć obiektu o ID: $id_obj";
+    }
+}
